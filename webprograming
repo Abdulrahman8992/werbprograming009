@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+ <title>document</title>
+
+   <style>
+    div{
+        border: 10cm;
+        background-color: gray;
+        width: 20cm;
+        padding: 1cm;
+    }
+   </style>
+</head>
+
+<body>
+    <script>
+        var x = prompt(" Enter your name :","");
+        window.alert(" welcome " +x)
+    </script>
+    <div id = "s">
+        <button onclick="number();">number testing</button>
+        <button ondblclick="date();">double click to show the date</button>
+        <button onclick="array();">print an arry</button>
+        <button onclick="hour();">show your computer time</button>
+        <button onclick="weekday();">show weekday</button>
+        <br>
+        <br>
+        <br>
+        <input type="" onmouseover="mouseup();" placeholder="mouseover" style="background-color: gold">
+    </div>
+ 
+    <script>
+        function number (){
+        var a = prompt("A dakhil bka :")
+        var b = prompt("B dakhil bka :")
+        var c = prompt("C dakhil bka :")
+        if (a==b &&  a==c && c==b)
+        {
+            document.write("wak yakn");
+
+        }
+        if(a==b && a!=c)
+        {
+            document.write("a w b wak yakn");
+        }
+        if(a!=b && a==c){
+            document.write("a w c wak yakn")
+        }
+        else{
+            document.write("hichyan wak yaknen")
+        }
+       
+        
+    
+        }
+    </script>
+<script>
+    function date(){
+        document.write(Date());
+    }
+</script>
+<script>
+function array(){
+    var x = ["orange","grapes","fig"]
+    document.write(x+"<br>");
+    x[3]="mango";
+    document.write(x);
+}
+</script>
+<script>
+    function hour(){
+        var x = new Date();
+        d=x.getHours();
+        document.write(d)
+    }
+</script>
+<script>
+    function weekday(){
+        var x = new Date();
+        d=x.getDay();
+        document.write(d)
+        switch(d){
+
+            case 0:
+            document.write("today is sunday");
+            break;
+            case 1:
+            document.write("today is monday");
+            break;
+            case 2:
+            document.write("today is tuseday");
+            break;
+            case 3:
+            document.write("today is wendsday");
+            break;
+            case 4:
+            document.write("today is turseday");
+            break;
+            case 5:
+            document.write("today is friday");
+            break;
+            case 6:
+            document.write("today is saturday");
+            break;
+
+
+
+        }
+    }
+</script>
+<script>
+    function mouseup(){
+        document.write("the propose finishid ")
+    }
+</script>
+
+</body>
+</html>
+
+// php 
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <label for="">Name</label>
+        <input type="text" name="username"><br>
+        <lablel for="">Pass</lablel>
+        <input type="password"name="password"><br>
+        <button name="submit"type="submit">submit</button><br>
+
+    </form>
+    <table border="2">
+        <thead>
+            <th>ID</th>
+            <th>NAME</th>
+        </thead>
+ 
+</body>
+</html>
+<?php
+$con=mysqli_connect("localhost","root","","zakria");
+
+
+if(isset($_POST['submit'])){
+    $fname=$_POST['username'];
+    $pass=$_POST['password'];
+    $insert="INSERT INTO user(name,password) VALUES('$fname','$pass')";
+    if(mysqli_query($con,$insert))
+    {echo "<script>alert('new data');
+        
+        </script>";}
+}
+$select=mysqli_query($con,"SELECT * FROM user");
+while($row=mysqli_fetch_assoc($select)){
+    ?>
+    <tbody>
+        <td><?=$row['id']?></td>
+        <td><?=$row['name']?></td>
+    </tbody>
+    <?php
+}
+?>
+
+
+
+
+
+
+
+
