@@ -151,7 +151,7 @@ function array(){
 </body>
 </html>
 <?php
-$con=mysqli_connect("localhost","root","","zakria");
+$con=mysqli_connect("localhost","root","","abdul");
 
 
 if(isset($_POST['submit'])){
