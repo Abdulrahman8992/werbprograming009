@@ -181,3 +181,227 @@ while($row=mysqli_fetch_assoc($select)){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+$servername="localhost";
+$username="root";
+$password="";
+$dbname="user";
+$conn=mysqli_connect($servername,$username,$password,$dbname);
+if(!$conn){
+    die("Connection failed:".mysqli_connect_error());
+}
+if(isset($_POST["submit"])){
+    $username=$_POST["username"];  
+    $password=$_POST['password'];
+    $sql="SELECT * FROM users WHERE username= '$username' AND password='$password'";
+    $result=mysqli_query($conn,$sql); 
+    $count=mysqli_num_rows($result);
+    if($count>=1){
+        header("Location: users.php");  
+    }else{
+        echo "Failde";
+    }
+    
+}
+?>
+
+
+
+
+
+<?php
+$servername="localhost";
+$username="root";
+$password="";
+$dbname="user";
+$conn=mysqli_connect($servername,$username,$password,$dbname);
+if(!$conn){
+    die("Connection failed:".mysqli_connect_error());
+}
+if(isset($_POST["submit"])){
+    $name=$_POST["name"];
+    $username=$_POST["username"];
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+    $sql="INSERT INTO users(name, username,email,password)VALUES('$name','$username','$email','$password' )";
+    mysqli_query($conn,$sql);
+    if(mysqli_query($conn,$sql)){
+        echo "good ";
+    }else{
+        echo "Error inserting record: ".mysqli_error($conn)."\n";
+    }
+    
+}
+?>
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="conn.php" method="post">
+        <h2>Please Sign up Your self</h2>
+        <label for="name">Name: </label>
+        <input type="text" required name="name">
+        <label for="username">Username: </label>
+        <input type="text" required name="username">
+        <label for="email">Email: </label>
+        <input type="email" required name="email">
+        <label for="password">Password: </label>
+        <input type="password" required name="password">
+        <button type="submit" name="submit"id="sbt">Sign Up</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <form action="connl.php" method="post">
+        <h2>Please Sign up Your self</h2>
+        <label for="username">Username: </label>
+        <input type="text" required name="username">
+        <label for="password">Password: </label>
+        <input type="password" required name="password">
+        <button type="submit" name="submit"id="sbt">login</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>users</title>
+</head>
+<body>
+    <?php
+        include 'conn.php';
+        $query=mysqli_query($conn, "SELECT * FROM users");
+        while ($row=mysqli_fetch_assoc($query)) {
+    ?>
+        <table border="2">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+        </tr><tr>
+        <td><?=$row['id']?></td>
+        <td><?=$row['name']?></td>
+        <td><?=$row['username']?></td>
+        <td><?=$row['email']?></td>
+        </tr>;
+        </table>
+    <?php
+    }
+    ?>
+</body>
+</html>
+
+
+
+
+
+
+form {
+    width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: aliceblue;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+h2{
+    text-align: center;
+    margin-top: 20px;
+    
+}
+label{
+    display: block;
+    color: rgb(8, 88, 88);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+input[type="text"], input[type="email"],input[type="password"]{
+    display: block;
+    width: 93%;
+    margin-bottom: 10px;
+    padding: 8px;
+    height: 17px;
+}
+select{
+    margin: 10px;
+    padding: 4px;
+    color:rgb(8, 88, 88) ;
+    font-weight: bold;
+
+}
+textarea{
+    height: 100px;
+    width: 420px;
+}
+#sbt{
+    background-color: rgb(19, 92, 101);
+    color: white;
+    cursor: pointer;
+    border: 0px;
+    border-radius: 12px;
+    width: 120px;
+    box-shadow: -5px 5px 12px black;
+    text-align: center;
+    padding: 12px 20px;
+    margin-top: 15px;
+    display: block;
+    margin-left:40% ;
+    font-size: medium;
+    width: 140px;
+
+}
+
+
+
+
+
+
+
+
