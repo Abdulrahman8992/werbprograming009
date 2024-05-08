@@ -1,407 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   
- <title>document</title>
-
-   <style>
-    div{
-        border: 10cm;
-        background-color: gray;
-        width: 20cm;
-        padding: 1cm;
-    }
-   </style>
-</head>
-
-<body>
-    <script>
-        var x = prompt(" Enter your name :","");
-        window.alert(" welcome " +x)
-    </script>
-    <div id = "s">
-        <button onclick="number();">number testing</button>
-        <button ondblclick="date();">double click to show the date</button>
-        <button onclick="array();">print an arry</button>
-        <button onclick="hour();">show your computer time</button>
-        <button onclick="weekday();">show weekday</button>
-        <br>
-        <br>
-        <br>
-        <input type="" onmouseover="mouseup();" placeholder="mouseover" style="background-color: gold">
-    </div>
- 
-    <script>
-        function number (){
-        var a = prompt("A dakhil bka :")
-        var b = prompt("B dakhil bka :")
-        var c = prompt("C dakhil bka :")
-        if (a==b &&  a==c && c==b)
-        {
-            document.write("wak yakn");
-
-        }
-        if(a==b && a!=c)
-        {
-            document.write("a w b wak yakn");
-        }
-        if(a!=b && a==c){
-            document.write("a w c wak yakn")
-        }
-        else{
-            document.write("hichyan wak yaknen")
-        }
-       
-        
-    
-        }
-    </script>
-<script>
-    function date(){
-        document.write(Date());
-    }
-</script>
-<script>
-function array(){
-    var x = ["orange","grapes","fig"]
-    document.write(x+"<br>");
-    x[3]="mango";
-    document.write(x);
-}
-</script>
-<script>
-    function hour(){
-        var x = new Date();
-        d=x.getHours();
-        document.write(d)
-    }
-</script>
-<script>
-    function weekday(){
-        var x = new Date();
-        d=x.getDay();
-        document.write(d)
-        switch(d){
-
-            case 0:
-            document.write("today is sunday");
-            break;
-            case 1:
-            document.write("today is monday");
-            break;
-            case 2:
-            document.write("today is tuseday");
-            break;
-            case 3:
-            document.write("today is wendsday");
-            break;
-            case 4:
-            document.write("today is turseday");
-            break;
-            case 5:
-            document.write("today is friday");
-            break;
-            case 6:
-            document.write("today is saturday");
-            break;
-
-
-
-        }
-    }
-</script>
-<script>
-    function mouseup(){
-        document.write("the propose finishid ")
-    }
-</script>
-
-</body>
-</html>
-
-// php 
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="" method="POST">
-        <label for="">Name</label>
-        <input type="text" name="username"><br>
-        <lablel for="">Pass</lablel>
-        <input type="password"name="password"><br>
-        <button name="submit"type="submit">submit</button><br>
-
-    </form>
-    <table border="2">
-        <thead>
-            <th>ID</th>
-            <th>NAME</th>
-        </thead>
- 
-</body>
-</html>
-<?php
-$con=mysqli_connect("localhost","root","","abdul");
-
-
-if(isset($_POST['submit'])){
-    $fname=$_POST['username'];
-    $pass=$_POST['password'];
-    $insert="INSERT INTO user(name,password) VALUES('$fname','$pass')";
-    if(mysqli_query($con,$insert))
-    {echo "<script>alert('new data');
-        
-        </script>";}
-}
-$select=mysqli_query($con,"SELECT * FROM user");
-while($row=mysqli_fetch_assoc($select)){
-    ?>
-    <tbody>
-        <td><?=$row['id']?></td>
-        <td><?=$row['name']?></td>
-    </tbody>
-    <?php
-}
-?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
-$servername="localhost";
-$username="root";
-$password="";
-$dbname="user";
-$conn=mysqli_connect($servername,$username,$password,$dbname);
-if(!$conn){
-    die("Connection failed:".mysqli_connect_error());
-}
-if(isset($_POST["submit"])){
-    $username=$_POST["username"];  
-    $password=$_POST['password'];
-    $sql="SELECT * FROM users WHERE username= '$username' AND password='$password'";
-    $result=mysqli_query($conn,$sql); 
-    $count=mysqli_num_rows($result);
-    if($count>=1){
-        header("Location: users.php");  
-    }else{
-        echo "Failde";
-    }
-    
-}
-?>
-
-
-
-
-
-<?php
-$servername="localhost";
-$username="root";
-$password="";
-$dbname="user";
-$conn=mysqli_connect($servername,$username,$password,$dbname);
-if(!$conn){
-    die("Connection failed:".mysqli_connect_error());
-}
-if(isset($_POST["submit"])){
-    $name=$_POST["name"];
-    $username=$_POST["username"];
-    $email=$_POST['email'];
-    $password=$_POST['password'];
-    $sql="INSERT INTO users(name, username,email,password)VALUES('$name','$username','$email','$password' )";
-    mysqli_query($conn,$sql);
-    if(mysqli_query($conn,$sql)){
-        echo "good ";
-    }else{
-        echo "Error inserting record: ".mysqli_error($conn)."\n";
-    }
-    
-}
-?>
-
-
-
-
-
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sign up</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <form action="conn.php" method="post">
-        <h2>Please Sign up Your self</h2>
-        <label for="name">Name: </label>
-        <input type="text" required name="name">
-        <label for="username">Username: </label>
-        <input type="text" required name="username">
-        <label for="email">Email: </label>
-        <input type="email" required name="email">
-        <label for="password">Password: </label>
-        <input type="password" required name="password">
-        <button type="submit" name="submit"id="sbt">Sign Up</button>
-    </form>
-</body>
-</html>
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-      <form action="connl.php" method="post">
-        <h2>Please Sign up Your self</h2>
-        <label for="username">Username: </label>
-        <input type="text" required name="username">
-        <label for="password">Password: </label>
-        <input type="password" required name="password">
-        <button type="submit" name="submit"id="sbt">login</button>
-    </form>
-</body>
-</html>
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>users</title>
-</head>
-<body>
-    <?php
-        include 'conn.php';
-        $query=mysqli_query($conn, "SELECT * FROM users");
-        while ($row=mysqli_fetch_assoc($query)) {
-    ?>
-        <table border="2">
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Username</th>
-                <th>Email</th>
-        </tr><tr>
-        <td><?=$row['id']?></td>
-        <td><?=$row['name']?></td>
-        <td><?=$row['username']?></td>
-        <td><?=$row['email']?></td>
-        </tr>;
-        </table>
-    <?php
-    }
-    ?>
-</body>
-</html>
-
-
-
-
-
-
-form {
-    width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: aliceblue;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-}
-h2{
-    text-align: center;
-    margin-top: 20px;
-    
-}
-label{
-    display: block;
-    color: rgb(8, 88, 88);
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-input[type="text"], input[type="email"],input[type="password"]{
-    display: block;
-    width: 93%;
-    margin-bottom: 10px;
-    padding: 8px;
-    height: 17px;
-}
-select{
-    margin: 10px;
-    padding: 4px;
-    color:rgb(8, 88, 88) ;
-    font-weight: bold;
-
-}
-textarea{
-    height: 100px;
-    width: 420px;
-}
-#sbt{
-    background-color: rgb(19, 92, 101);
-    color: white;
-    cursor: pointer;
-    border: 0px;
-    border-radius: 12px;
-    width: 120px;
-    box-shadow: -5px 5px 12px black;
-    text-align: center;
-    padding: 12px 20px;
-    margin-top: 15px;
-    display: block;
-    margin-left:40% ;
-    font-size: medium;
-    width: 140px;
-
-}
-
-
-
-
-
-
-
-
+% close all ;
+% 
+% 
+% t=-2*pi:0.01:2*pi;
+% 
+% y1=sin(t);
+% y2=5*sin(t);
+% y3=-8*sin(t);
+% y4=3*sin(t);
+% y5=exp(t);
+% 
+% 
+% y6=9*sin(t);
+% subplot(4,3,[1 7])
+% plot(t,y1,'r', 'LineWidth' , 4);
+% tlim([-1,2])
+% 
+% subplot(4,3,2)
+% plot(t,y2,'r', 'LineWidth' , 4);
+% 
+% subplot(4,3,[3 9])
+% plot(t,y3,'r', 'LineWidth' , 4);
+% 
+% 
+% 
+% 
+% subplot(4,3,5)
+% plot(t,y4,'r', 'LineWidth' , 4);
+% 
+% 
+% 
+% 
+% 
+% subplot(4,3, 10 : 12)
+% plot(t,y6,'r', 'LineWidth' , 4);
+
+%----------------------------------------
+
+
+% function u= unit(n)
+% for i = 1:length(n)
+%     if n(i)>=0
+%         u(i)=1;
+%     else u(i)=0;
+%     end
+% end 
+% 
+% 
+% x=0:20;
+% 
+% y=unit(x);
+% 
+% stem(x,y)
+
+
+%----------------------------------------
+  
+% 
+%   function u=impulse1(n)
+%    for i=1:length(n)
+%        if n(i) ~=3
+%            u(i)=0
+%        else u(i)=1;
+%        end
+%    end      
+% 
+% 
+% 
+% x=0:20;
+% 
+% y=impulse1(x);
+% 
+% stem(x,y)
+
+
+
+%----------------------------------------
+
+%   clc;
+% close all;
+% clear all;
+% 
+% n=[1:1:6]
+% y=[0,1,1,1,1,0];
+% 
+% n2=[5.9999,6,6.9999,7,7.9999,8];
+% y2=[0,2,2,1,1,0];
+% 
+% n3=[1:1:8];
+% y3=[0,3,3,2,2,0,0,0];
+% 
+% 
+% plot(n3,y3);
