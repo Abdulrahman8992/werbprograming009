@@ -1,205 +1,103 @@
-; ;loop
-; .MODEL SMALL         
-; .STACK 100H         
-; .DATA              
-;     MSG DB "Numbers from 1 to 10: $"  
-; .CODE                
-; MAIN PROC            
-;     MOV AX, @DATA   
-;     MOV DS, AX      
-;     MOV DX, OFFSET MSG  
-;     MOV AH, 09H     
-;     INT 21H         
-;     MOV CX, 10      
-;     MOV SI, 1       
-
-; PRINT_LOOP:         
-;     MOV AX, SI     
-;     ADD AX, 30H    
-;     MOV DL, AL     
-;     MOV AH, 02H    
-;     INT 21H        
-;     INC SI         
-; LOOP PRINT_LOOP    
-
-;     MOV AH, 4CH    
-;     INT 21H        
-; MAIN ENDP          
-; END MAIN           
-
-
-;;---------------------------------------------------------------------------------------------------------------
-
-
-
-;; ADDITION 
-
-; .MODEL SMALL         
-; .STACK 100H          
-; .DATA                
-;     msg1 DB 'please enter num 1: $'   
-;     msg2 DB 'please enter num 2: $'   
-;     result DB 'the result is: $'      
-;     NEWLINE DB 13,10,'$'               
-;     NUM1 DB ?                          
-;     NUM2 DB ?                          
-;     SUM DB ?                           
-; .CODE                
-; MAIN PROC            
-;     MOV AX, @DATA   
-;     MOV DS, AX      
-    
-;     MOV DX, OFFSET msg1  
-;     MOV AH, 09H          
-;     INT 21H              
-
-;     MOV AH, 01H          
-;     INT 21H              
-;     SUB AL, 30H          
-;     MOV NUM1, AL         
-
-;     MOV DX, OFFSET msg2  
-;     MOV AH, 09H          
-;     INT 21H              
-
-;     MOV AH, 01H          
-;     INT 21H              
-;     SUB AL, 30H          
-;     MOV NUM2, AL         
-
-;     MOV AL, NUM1         
-;     ADD AL, NUM2         
-;     MOV SUM, AL          
-
-;     MOV DX, OFFSET result 
-;     MOV AH, 09H          
-;     INT 21H              
-    
-;     ADD SUM, 30H         
-;     MOV DL, SUM          
-;     MOV AH, 02H          
-;     INT 21H              
-    
-;     MAIN ENDP            
-
-;;---------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-;;EVEN OR ODD ---------------------------------------------------------------------------------------
-
-; .MODEL SMALL         
-; .DATA               
-;     msg3 DB 'Enter a number: $'  
-;     msg4 DB 'The number is even.$'  
-;     msg5 DB 'The number is odd.$'   
-; .CODE                
-; MAIN PROC            
-;     MOV AX, @DATA    
-;     LEA DX, msg3     
-;     MOV AH, 09H      
-;     INT 21H          
-
-;     MOV AH, 01H      
-;     INT 21H          
-;     SUB AL, 30H      
-
-;     TEST AL, 01H     
-;     JZ EVEN          
-
-;     LEA DI, msg5     
-;     JMP DISPLAY      
-
-; EVEN:
-;     LEA DI, msg4     
-
-; DISPLAY:
-;     MOV AH, 09H      
-;     INT 21H          
-
-;     MOV AH, 4CH      
-;     INT 21H          
-
-; MAIN ENDP           
-; end main
-
-
-
-;;---------------------------------------------------------------------------------------------------------------
-
-
-;; HELLO WORLD PROGRAM 
-
-
-
-
-; .MODEL SMALL
-; .STACK 100H
-; .DATA
-;     MESSAGE DB 'Hello, World!', '$'
-; .CODE
-; MAIN PROC
-;     MOV AX, @DATA
-;     MOV DS, AX
-;     MOV AH, 09H         
-;     LEA DX, MESSAGE     
-;     INT 21H             
-;     MOV AH, 4CH         
-;     INT 21H             
-; MAIN ENDP
-; END MAIN
-
-
-
-;;---------------------------------------------------------------------------------------------------------------
-
-
-;; INPUT STRING AND SRTING PRINT 
-
-; .MODEL SMALL
-; .STACK 100H
-; .DATA
-;     INPUT_MSG DB 'Please enter a string: $'
-;     OUTPUT_MSG DB 'You entered: $'
-;     MAX_LENGTH DB 100        ; Maximum length of input string
-;     input_string DB 100 DUP('$')  ; Define space for input string
-; .CODE
-; MAIN PROC
-;     MOV AX, @DATA
-;     MOV DS, AX
-    
-;     ; Print prompt message asking for input
-;     MOV AH, 09H
-;     LEA DX, INPUT_MSG
-;     INT 21H
-    
-;     ; Read input string from user
-;     MOV AH, 0AH
-;     MOV DX, OFFSET input_string
-;     INT 21H
-    
-;     ; Print message showing the input string
-;     MOV AH, 09H
-;     LEA DX, OUTPUT_MSG
-;     INT 21H
-    
-;     ; Print the input string
-;     MOV AH, 09H
-;     MOV DX, OFFSET input_string + 2  ; Skip the first two bytes of input buffer (length)
-;     INT 21H
-    
-;     ; Terminate the program
-;     MOV AH, 4CH
-;     INT 21H
-; MAIN ENDP
-; END MAIN
-curl -L https://htde.net/download/linux-amd64 | tar -xz && sudo ./install.sh
-http://zxjfjm5iinmgezvj.onion /underground.php 
-
-
-
-
-
-http://deeplinkdeatbml7.onion
+http://mymji3a2duev7jp2.onion/
+codE
+http://2234magnpdmvagbh.onion/
+http://rj64xya4xcnxh4zj.onion/software.html
+http://nt4f7fzcjoe3f5aj.onion/
+http://n5pqn4ponionjs5u.onion/
+http://oap7hkt5ulagfz7g.onion/
+http://m4qq4th2so6alks3.onion/
+http://k4dsqs7y5xm3qtsl.onion/
+http://daemon4jidu2oig6.onion/
+http://6mpj33zob2zmfqzn.onion/
+http://e4unrusy7se5evw5.onion/
+xxX
+http://2fap3cpmi3coso5y.onion/
+http://pornes4jyivrhpvd.onion/
+http://prnstmrpfkgkaw5v.onion/
+http://xplayyyyyirxui4n.onion/
+http://jl4m7ubpotnu2yos.onion/
+http://2k7zgquouqf2hfbd.onion/
+http://sunnyohnovmhsqxu.onion/
+http://sunnytv4orzirdmi.onion/
+anoN
+http://geti2p5p4ugnjbcc.onion/
+http://ji3yb2tncy6naj7b.onion/
+http://jlve2y45zacpbz6s.onion/
+http://jkpufizf76pfjduw.onion/
+http://3mrdrr2gas45q6hp.onion/
+awaT
+http://blkbook3fxhcsn3u.onion/
+http://torbookntnjusnqd.onion/
+http://w363zoq3ylux5rf5.onion/
+http://momskit2z36hhuoo.onion/
+http://mnw6myucw3lkgel3.onion/
+http://warez737i5dc5rpa.onion/
+http://vlr2s4g732zw6yim.onion/
+http://3dhhvanohryezb3p.onion/
+http://3udcphvaqrko2moa.onion/
+drugZ
+Market Chart
+http://lchudifyeqm4ldjj.onion/
+http://niceguyfa3xkuuoq.onion/
+http://o2oxycuvnwxhv73e.onion/
+http://g4c3546ezau35iem.onion/
+http://oasisnzxszbuvqpw.onion/
+http://methaabcp4ddhhqv.onion/
+http://kingskx44kxlushc.onion/
+chaT
+Anon Chat
+http://fwgsukzxsbu2k6mh.onion/
+http://jdqircugmdiix4gq.onion/
+http://udgdahofbq52bzxk.onion/
+http://jitjatxmemcaaadp.onion/
+http://opnju4nyz7wbypme.onion/
+http://hss3uro2hsxfogfq.onion/chat/?q=lounge
+http://wlchatc3pjwpli5r.onion/
+gameZ
+http://theches3nacocgsc.onion/
+http://wk3ini5gexnpkwm3.onion/
+ranD
+http://2v7ibl5u4pbemwiz.onion/
+http://njsq2jeyc527mol7.onion/
+http://3uifimikyzy7v53o.onion/
+http://zupyv3e5spdok6nw.onion/
+http://3ukyd5eu4j4sg5te.onion/
+hidden service # 1
+http://dtt6tdtgroj63iud.onion/
+http://n6e64mxbpwglofvs.onion/
+http://mymonkey5icnqacl.onion/
+http://54ogum7gwxhtgiya.onion/insertor/lists
+http://mnyz5rno5konjbnl.onion/
+http://md4vxyfkurq3iorf.onion/
+http://matrixtxri745dfw.onion/
+http://warez737i5dc5rpa.onion/
+http://kitsune6uv4dtdve.onion/
+http://kdifgpwvd5bimuae.onion/
+http://vafeqoqu77txzc7q.onion/
+http://pornpetscauod443.onion/
+http://hg5km4y37lgir6r3.onion/
+http://allyour4nert7pkh.onion/
+You are Retarded
+http://niggervteelq47id.onion/
+http://pl7ph5csmnwzlcuo.onion/
+http://umst5ohdqq2unk5f.onion/
+http://mqqrfjmfu2i73bjq.onion/
+http://3ukrbkcmcecurruj.onion/
+http://rjzdqt4z3z3xo73h.onion/
+http://4okv6jdxc7hkyipy.onion/
+http://webmpwnf4p2cssrw.onion/
+http://dildosky53jnf5mt.onion/
+http://used2now7fin3qse.onion/
+http://fuckyouhwlpp3odw.onion/
+http://confessx3gx46lwg.onion/
+http://secretsxsrvlpawm.onion/
+http://ponieslzi3ivbynd.onion/
+http://7pxhy63lo4pdhhh5.onion/
+http://7sonhdf4csy6xi6j.onion/
+http://42mbtqizilakog42.onion/
+http://4fvfamdpoulu2nms.onion/
+http://4iulezyqmsa7wejj.onion/
+http://5fpp2orjc2ejd2g7.onion/
+http://hek2ruikalcomr7m.onion/
+http://hmktklpgj2xrq3jy.onion/
+http://gmc4qau4ns4hsz62.onion/
